@@ -26,7 +26,7 @@ public class BaseTest extends BasePage {
     public String checkoutCompleteUrl;
     protected SoftAssert softAssert;
 
-    @BeforeMethod(groups = "config")
+    @BeforeMethod
     public void setUp() throws Exception {
         username_standard = "standard_user";
         username_lockedOut = "locked_out_user";
@@ -40,7 +40,7 @@ public class BaseTest extends BasePage {
         checkoutCompleteUrl = driverConfig.checkoutCompleteUrlValue();
     }
 
-    @AfterMethod(groups = "config")
+    @AfterMethod
     public void tearDown(){
         DriverManager.getDriver().quit();
         DriverManager.removeDriver();
